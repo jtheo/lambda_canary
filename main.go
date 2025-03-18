@@ -1,4 +1,3 @@
-// main.go
 package main
 
 import (
@@ -10,24 +9,14 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-type payload struct {
-	version string
-}
-
 func hello(ctx context.Context, event json.RawMessage) (string, error) {
-	// var p payload
-	// if err := json.Unmarshal(event, &p); err != nil {
-	// 	return "ERROR", err
-	// }
-
-	log.Printf("Version of the lambda is %s\n", version)
-	r := fmt.Sprintf("Hello from version: %s", version)
+	log.Printf("Version of the lambda is %s\n", Version)
+	r := fmt.Sprintf("Hello from version: %s", Version)
 	return r, nil
 }
 
-var version = "0"
+var Version = "0" // Version comes from the build process
 
 func main() {
-	// Make the handler available for Remote Procedure Call by AWS Lambda
 	lambda.Start(hello)
 }

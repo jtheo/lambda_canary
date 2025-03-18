@@ -1,1 +1,13 @@
-dist
+.terraform
+.terraform.lock.hcl
+bootstrap
+bootstrap.zip
+dist/
+lambda_url.txt
+out
+out.log
+result
+terraform.tfstate
+terraform.tfstate.backup
+version
+
